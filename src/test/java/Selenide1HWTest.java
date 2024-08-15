@@ -1,15 +1,19 @@
-import org.junit.jupiter.api.Test;
+import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class Selenide1HW {
+public class Selenide1HWTest {
+
+    @BeforeAll
+    static void beforeAll() {
+        Configuration.baseUrl = "https://github.com/";
+    }
 
     @Test
-    void Selenide1HWTest(){
-        baseUrl = "https://github.com";
+    void selenide1HWTest(){
 
         String codeExample1 = "@ExtendWith({SoftAssertsExtension.class})\n" +
                 "class Tests {\n" +
